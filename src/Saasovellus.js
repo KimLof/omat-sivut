@@ -31,8 +31,28 @@ const Weather = () => {
         }
     };
 
+    const transalateWeather = (icon) => {
+        switch (icon) {
+            case 'Clear':
+                return 'Selkeää';
+            case 'Clouds':
+                return 'Pilvistä';
+            case 'Rain':
+                return 'Sateista';
+            case 'Snow':
+                return 'Lumista';
+            case 'Thunderstorm':
+                return 'Ukkosta';
+            case 'Drizzle':
+                return 'Tihkusadetta';
+            default:
+                return 'Pilvistä';
+        }
+    };
+
     return (
         <div className="weather-app">
+            <h1>Sääsovellus</h1>
             <form onSubmit={fetchWeather}>
                 <input
                     type="text"
@@ -47,7 +67,10 @@ const Weather = () => {
                 <div className="weather-info">
                     <h2>{weather.name}</h2>
                     <p>Lämpötila: {weather.main.temp} °C</p>
-                    <p>Taivas: {weather.weather[0].description}</p>
+                    <p>Taivas: {transalateWeather(weather.weather[0].main)}</p>
+                    <p>Ilmankosteus: {weather.main.humidity} %</p>
+                    <p>Ilmanpaine: {weather.main.pressure} hPa</p>
+                    <p>Tuulen nopeus: {weather.wind.speed} m/s</p>
                 </div>
             )}
         </div>

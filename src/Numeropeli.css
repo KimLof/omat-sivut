@@ -1,4 +1,4 @@
-.game-container {
+.game-container1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,11 +8,16 @@
 .game-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* luo neljä saraketta */
-    gap: 5px; /* lisää väliä ruutujen välille */
+    gap: 3px; /* lisää väliä ruutujen välille */
     margin-bottom: 20px; /* Lisää tilaa pelilaudan ja napin välille */
     border: 2px solid black; /* lisää musta reunus koko pelilaudalle */
     width: fit-content; /* asettaa pelilaudan leveyden sisällön mukaan */
     margin: auto; /* keskittää pelilaudan */
+    background: none; /* Poista taustaväri */
+    background-color: transparent; /* Tämä asettaa taustan läpinäkyväksi */
+    cursor: pointer;
+
+
   }
   
   .tile {
@@ -36,3 +41,22 @@
     background-color: white; /* asettaa tyhjän tiilen taustavärin valkoiseksi */
     border: 1px solid black; /* voit halutessasi lisätä reunuksen tyhjälle ruudulle */  
     }
+    
+
+    /* Sekoita-nappi tyyli */
+button {
+  padding: 10px 20px;
+  font-size: 16px; /* Suurempi fontti */
+  border: none; /* Ei reunaa */
+  border-radius: 4px; /* Pyöristetyt kulmat */
+  background-color: #007BFF; /* Sininen tausta */
+  color: white;
+  cursor: pointer; /* Käden muotoinen kursori */
+  transition: background-color 0.2s; /* Animaatio varten */
+  align-items: center;
+
+}
+
+button:hover {
+  background-color: #0056b3; /* Tummempi sininen hover-tilassa */
+}

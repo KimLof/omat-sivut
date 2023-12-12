@@ -74,8 +74,45 @@ function FifteenGame() {
         return { row: Math.floor(index / 4), col: index % 4 };
     };
 
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (isGameStarted) {
+                const emptyIndex = tiles.indexOf(null);
+                const { row, col } = getRowCol(emptyIndex);
+
+                switch (event.key) {
+                    case 'ArrowUp':
+                    case 'w':
+                        if (row < 3) moveTile(emptyIndex + 4);
+                        break;
+                    case 'ArrowDown':
+                    case 's':
+                        if (row > 0) moveTile(emptyIndex - 4);
+                        break;
+                    case 'ArrowLeft':
+                    case 'a':
+                        if (col < 3) moveTile(emptyIndex + 1);
+                        break;
+                    case 'ArrowRight':
+                    case 'd':
+                        if (col > 0) moveTile(emptyIndex - 1);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [tiles, isGameStarted, moveTile]);
+
     return (
-        <div className="game-container">
+        <div className="game-container1">
+            <h1 className='Otsikko'>15-peli</h1>
             <div className="game-board">
                 {tiles.map((tile, index) => {
                     // Tarkista onko tiili punainen sen arvon perusteella
@@ -91,7 +128,8 @@ function FifteenGame() {
                     );
                 })}
             </div>
-            <button onClick={shuffleTiles}>Sekoita</button>
+            <p> </p>
+            <button className="button" onClick={shuffleTiles}>Sekoita</button>
         </div>
     );
 }

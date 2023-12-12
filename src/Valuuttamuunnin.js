@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Valuuttamuunnin.css';
 
 const CurrencyConverter = () => {
     const [valuutat, setValuutat] = useState({});
@@ -36,25 +37,39 @@ const CurrencyConverter = () => {
     };
 
     return (
-        <div>
-            <input
-                type="number"
-                value={muunnettavaSumma}
-                onChange={(e) => setMuunnettavaSumma(e.target.value)}
-                onKeyDown={kasitteleEnter}
-            />
-            <select value={lahdeValuutta} onChange={(e) => setLahdeValuutta(e.target.value)}>
-                {Object.keys(valuutat).map(valuutta => (
-                    <option key={valuutta} value={valuutta}>{valuutta}</option>
-                ))}
-            </select>
-            <select value={kohdeValuutta} onChange={(e) => setKohdeValuutta(e.target.value)}>
-                {Object.keys(valuutat).map(valuutta => (
-                    <option key={valuutta} value={valuutta}>{valuutta}</option>
-                ))}
-            </select>
-            <button onClick={muunnaValuutta}>Muunna</button>
-            {muunnettuSumma && <p>Muunnettu summa: {muunnettuSumma} {kohdeValuutta}</p>}
+        <div className="container">
+            <h1>Valuuttamuunnin</h1>
+            <div className="input-group">
+                <input
+                    type="number"
+                    className="input"
+                    value={muunnettavaSumma}
+                    onChange={(e) => setMuunnettavaSumma(e.target.value)}
+                    onKeyDown={kasitteleEnter}
+                    placeholder="Syötä summa..."
+                />
+            </div>
+            <div className="input-group">
+                <select className="select" value={lahdeValuutta} onChange={(e) => setLahdeValuutta(e.target.value)}>
+                    {Object.keys(valuutat).map(valuutta => (
+                        <option key={valuutta} value={valuutta}>{valuutta}</option>
+                    ))}
+                </select>
+            </div>
+            <div className="input-group">
+                <select className="select" value={kohdeValuutta} onChange={(e) => setKohdeValuutta(e.target.value)}>
+                    {Object.keys(valuutat).map(valuutta => (
+                        <option key={valuutta} value={valuutta}>{valuutta}</option>
+                    ))}
+                </select>
+            </div>
+            <button className="button" onClick={muunnaValuutta}>Muunna</button>
+            {muunnettuSumma && (
+                <div className="output">
+                    <div>Muunnettu summa:</div>
+                    <div className="output-amount">{muunnettuSumma} {kohdeValuutta}</div>
+                </div>
+            )}
         </div>
     );
 };

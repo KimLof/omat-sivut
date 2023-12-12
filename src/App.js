@@ -19,7 +19,12 @@ function GameRoutes() {
 
 
 function TextBox() {
-  return <div className="text-box">Tekstiä täällä</div>;
+  return (
+    <div className="text-box">
+      <h1>Tietoa Minusta</h1>
+      <p>Oon kimi</p>
+    </div>
+  );
 }
 
 function Menu() {
@@ -43,12 +48,15 @@ function App() {
           <TextBox />
         </div>
         <div className="right-side">
-          <GameRoutes />
+          <div className="game-container">
+            <GameRoutes />
+          </div>
           <Menu />
         </div>
       </div>
     </Router>
   );
+
 }
 
 export default App;

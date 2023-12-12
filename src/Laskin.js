@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import './Laskin.css';
 
 const Calculator = () => {
@@ -6,6 +6,8 @@ const Calculator = () => {
     const [previousValue, setPreviousValue] = useState(null);
     const [operator, setOperator] = useState(null);
     const [waitingForOperand, setWaitingForOperand] = useState(false);
+
+    
 
     const inputDigit = (digit) => {
         if (waitingForOperand) {
@@ -57,8 +59,39 @@ const Calculator = () => {
         '=': (firstValue, secondValue) => secondValue
     };
 
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key >= 0 && event.key <= 9) {
+                inputDigit(event.key);
+            } else if (event.key === '.' || event.key === ',') {
+                inputDot();
+            } else if (event.key === 'Enter' || event.key === '=') {
+                performOperation('=');
+            } else if (event.key === '+') {
+                performOperation('+');
+            } else if (event.key === '-') {
+                performOperation('-');
+            } else if (event.key === '*') {
+                performOperation('*');
+            } else if (event.key === '/') {
+                performOperation('/');
+            } else if (event.key === 'Escape') { // Use Escape to clear
+                clearAll();
+            }
+        };
+
+        // Lisää event listener näppäimistön painalluksille
+        document.addEventListener('keydown', handleKeyDown);
+
+        // Muista poistaa event listener, kun komponentti poistetaan DOM:sta
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [currentValue, performOperation, inputDigit, inputDot, clearAll]);
+
     return (
         <div className="calculator">
+            <h1 className='otsikko'>Laskin</h1>
             <div className="calculator-display">{currentValue}</div>
             <div className="calculator-keys">
                 <button onClick={() => inputDigit('7')}>7</button>
@@ -76,13 +109,12 @@ const Calculator = () => {
                 <button onClick={() => inputDigit('3')}>3</button>
                 <button className="operator" onClick={() => performOperation('-')}>-</button>
 
-                <button onClick={() => inputDigit('0')}>0</button>
+                <button className='zero' onClick={() => inputDigit('0')}>0</button>
                 <button onClick={inputDot}>.</button>
-                <button className="placeholder"></button> {/* Tämä on tyhjä tilanpitäjä */}
                 <button className="operator" onClick={() => performOperation('+')}>+</button>
 
-                <button className="equal-sign" onClick={() => performOperation('=')}>=</button>
                 <button className="all-clear" onClick={clearAll}>AC</button>
+                <button className="equal-sign" onClick={() => performOperation('=')}>=</button>
             </div>
         </div>
     );
