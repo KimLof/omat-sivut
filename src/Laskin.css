@@ -1,0 +1,89 @@
+.calculator {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.calculator-display {
+    box-sizing: border-box;
+    width: 100%;
+    background: #222;
+    color: white;
+    text-align: right;
+    padding: 20px;
+    font-size: 2em;
+    border: 1px solid #999;
+    border-bottom: none;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: #f2f2f2;
+    border: 1px solid #999;
+    font-size: 1.5em;
+    padding: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+button.operator,
+.all-clear,
+.equal-sign {
+    color: white;
+}
+
+.operator {
+    background-color: #ff8c00;
+}
+
+.equal-sign,
+.all-clear {
+    background-color: #1e90ff;
+}
+
+.equal-sign {
+    grid-column: span 2;
+    /* Makes the equals button take up two columns */
+}
+
+.all-clear {
+    grid-row: span 1;
+    /* Makes the AC button take up one row */
+    grid-column: span 2;
+    /* Makes the AC button take up two columns */
+}
+
+/* Style adjustments for the zero button to fill the space */
+button.zero {
+    grid-column: span 2;
+    /* Makes the zero button take up two columns */
+}
+
+button:active {
+    background-color: #ccc;
+}
+
+/* Adding some hover effects for the buttons */
+button:hover:not(.operator),
+button:focus:not(.operator) {
+    background-color: #ddd;
+}
+
+button.operator:hover,
+button.operator:focus,
+button.all-clear:hover,
+button.all-clear:focus {
+    background-color: #fd7e14;
+}
+
+.placeholder {
+    background-color: #ddd;
+    /* Placeholder button if needed */
+    border: none;
+}
