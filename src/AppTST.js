@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
-import FifteenGame from './Numeropeli';
-import Weather from './Saasovellus';
-import CurrencyConverter from './Valuuttamuunnin';
-import Calculator from './Laskin';
-import SnakeGame from './Matopeli';
+import '../styles/AppTST.css';
+import FifteenGame from '../games/Numeropeli';
+import Weather from '../applications/Saasovellus';
+import CurrencyConverter from '../applications/Valuuttamuunnin';
+import Calculator from '../applications/Laskin';
+import SnakeGame from '../games/Matopeli';
 
 function GameRoutes() {
   return (
@@ -20,12 +20,12 @@ function GameRoutes() {
 }
 
 
-// function TextBox() {
-//   return (
-//     <div className="text-box">
-//     </div>
-//   );
-// }
+function TextBox() {
+  return (
+    <div className="text-box">
+    </div>
+  );
+}
 
 function Menu() {
   return (

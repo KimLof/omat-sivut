@@ -1,9 +1,19 @@
 .snake-game {
     border: 1px solid black;
-    margin: auto;
+    margin-bottom: 10px; /* Lisää väliä canvasin ja Aloita-napin välille */
+
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Keskittää lapset pystysuunnassa */
+    justify-content: center; /* Keskittää lapset vaakasuunnassa */
+    margin-top: 20px; /* Lisää tilaa yläreunaan, voit säätää tätä tarpeen mukaan */
 }
 
 .button {
+    width: 200px;
     background-color: #007bff;
     /* Sininen */
     color: white;
@@ -19,13 +29,14 @@
 
 .speed-buttons {
     display: flex;
-    justify-content: center; /* Keskittää lapset vaakasuunnassa */
-    flex-wrap: wrap; /* Mahdollistaa lasten siirtymisen uudelle riville tarvittaessa */
-    gap: 10px; /* Lisää väliä nappien välille */
-  }
-  
-  /* Jatka muilla tyyleilläsi tästä eteenpäin... */
-  
+    justify-content: center;
+    /* Keskittää lapset vaakasuunnassa */
+    flex-wrap: wrap;
+    /* Mahdollistaa lasten siirtymisen uudelle riville tarvittaessa */
+    gap: 1px;
+    /* Lisää väliä nappien välille */
+}
+
 
 /* Hiiren ollessa nappien päällä */
 .button:hover {

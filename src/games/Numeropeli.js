@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Numeropeli.css';
+import '../styles/Numeropeli.css';
 
 function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;

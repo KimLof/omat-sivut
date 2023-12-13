@@ -4,7 +4,7 @@
     flex-direction: column;
     height: 100vh;
     font-family: Arial, sans-serif;
-    background-image: url('Tausta.jpg');
+    background-image: url('../images/Tausta.jpg');
     /* Aseta sivun taustakuva */
     background-size: cover;
     background-position: center;
@@ -59,7 +59,7 @@
 
 /* Dropdown-valikon nuoli */
 .subheader select {
-    background: url('dropdownarrot.jpg') no-repeat right; /* Asettaa alasvetovalikon nuolen */
+    background: url('../images/dropdownarrot.jpg') no-repeat right; /* Asettaa alasvetovalikon nuolen */
     background-size: 25px 25px; /* Asettaa kuvakkeen koon */
     padding-right: 30px; /* Asettaa oikean paddingin, jotta teksti ei mene kuvakkeen päälle */
   }

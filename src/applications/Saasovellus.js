@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Saasovellus.css';
+import '../styles/Saasovellus.css';
 
 const Weather = () => {
     const [city, setCity] = useState('');
@@ -63,16 +63,14 @@ const Weather = () => {
                 <button type="submit">Hae</button>
             </form>
             {error && <p className="error-message">{error}</p>}
-            {weather && (
-                <div className="weather-info">
-                    <h2>{weather.name}</h2>
-                    <p>Lämpötila: {weather.main.temp} °C</p>
-                    <p>Taivas: {transalateWeather(weather.weather[0].main)}</p>
-                    <p>Ilmankosteus: {weather.main.humidity} %</p>
-                    <p>Ilmanpaine: {weather.main.pressure} hPa</p>
-                    <p>Tuulen nopeus: {weather.wind.speed} m/s</p>
-                </div>
-            )}
+            <div className="weather-info">
+                <h2>{weather ? weather.name : "Valitse kaupunki ensin"}</h2>
+                <p>Lämpötila: {weather ? `${weather.main.temp} °C` : "Lämpötila"}</p>
+                <p>Taivas: {weather ? transalateWeather(weather.weather[0].main) : "Taivas"}</p>
+                <p>Ilmankosteus: {weather ? `${weather.main.humidity} %` : "Ilmankosteus"}</p>
+                <p>Ilmanpaine: {weather ? `${weather.main.pressure} hPa` : "Ilmanpaine"}</p>
+                <p>Tuulen nopeus: {weather ? `${weather.wind.speed} m/s` : "Tuulen nopeus"}</p>
+            </div>
         </div>
     );
 };

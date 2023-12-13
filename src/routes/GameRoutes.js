@@ -1,17 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import FifteenGame from './Numeropeli';
-import Weather from './Saasovellus';
-import CurrencyConverter from './Valuuttamuunnin';
-import Calculator from './Laskin';
-import SnakeGame from './Matopeli';
-import Tietoa from './Tietoa';
+import FifteenGame from '../games/Numeropeli';
+import Weather from '../applications/Saasovellus';
+import CurrencyConverter from '../applications/Valuuttamuunnin';
+import Calculator from '../applications/Laskin';
+import SnakeGame from '../games/Matopeli';
+import Tietoa from '../applications/Tietoa';
 
 function GameRoutes() {
     return (
         <div className="content-box">
             <Routes>
-                <Route path="/tietoa" element={<Tietoa />} />
+                <Route path="/" element={<Tietoa />} />
                 <Route path="/15-peli" element={<FifteenGame />} />
                 <Route path="/laskin" element={<Calculator />} />
                 <Route path="/saasovellus" element={<Weather />} />

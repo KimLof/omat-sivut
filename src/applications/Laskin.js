@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react';
-import './Laskin.css';
+import '../styles/Laskin.css';
 
 const Calculator = () => {
     const [currentValue, setCurrentValue] = useState('0');

@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './Matopeli.css';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import '../styles/Matopeli.css';
 
 const scale = 19;
 const rows = 19;
@@ -22,7 +22,7 @@ function SnakeGame() {
         setGameStarted(true);
     };
 
-    const handleKeyDown = e => {
+    const handleKeyDown = useCallback((e) => {
         if (!hasMoved) return; // Ei salli suunnanmuutosta, jos edellinen ei ole toteutunut
     
         const key = e.key;
@@ -65,7 +65,7 @@ function SnakeGame() {
             setDirection(newDirection);
             setHasMoved(false); // Asetetaan falseksi, kunnes käärme liikkuu
         }
-    };
+    }, [direction, scale, hasMoved, setDirection, setHasMoved]);
 
     useEffect(() => {
         if (!gameStarted) return;
@@ -125,7 +125,7 @@ function SnakeGame() {
             clearInterval(interval);
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [gameStarted, snake, direction, food, hasMoved]);
+    }, [gameStarted, snake, direction, food, hasMoved, speed, handleKeyDown]);
 
 
     return (
@@ -134,14 +134,16 @@ function SnakeGame() {
                 <button className={`button ${speed === 200 ? 'button-active' : ''}`} onClick={() => setSpeed(200)}>Hidas</button>
                 <button className={`button ${speed === 150 ? 'button-active' : ''}`} onClick={() => setSpeed(150)}>Keskinopea</button>
                 <button className={`button ${speed === 100 ? 'button-active' : ''}`} onClick={() => setSpeed(100)}>Nopea</button>
-            </div>
-            <canvas
-                ref={canvasRef}
-                width={`${scale * columns}px`}
-                height={`${scale * rows}px`}
-                className="snake-game"
-            />
-            <button className="button" onClick={startGame}>Aloita</button>
+            </div >
+            <div className="game-container">
+        <canvas
+            ref={canvasRef}
+            width={`${scale * columns}px`}
+            height={`${scale * rows}px`}
+            className="snake-game"
+        />
+        {!gameStarted && <button className="button" onClick={startGame}>Aloita</button>}
+    </div>
         </>
     );
 }

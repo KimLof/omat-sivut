@@ -1,0 +1,87 @@
+/* Valuuttamuunnin.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    /* tai haluamasi maksimileveys */
+    margin: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Asettaa elementit ylös flex-kontainerissa */
+    width: 100%;
+    max-width: 1200px;
+    /* Säädä tarvittaessa */
+}
+
+.converter-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* Luo tilaa elementtien välille */
+}
+
+.muunnin,
+.selitykset {
+    width: 48%;
+    /* Säädä leveyttä tarpeen mukaan */
+}
+
+.input-group .input,
+.input-group .select,
+.button {
+    width: 50%; /* Tämä asettaa kaikki elementit samanlevyisiksi */
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.output {
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.output-amount {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.valuutta-selitykset {
+    margin-left: 20px;
+    /* Lisää tilaa oikealle */
+    max-height: 400px;
+    /* Säädä korkeutta tarpeen mukaan */
+    overflow: auto;
+    /* Pitää listan vieritettävänä */
+}
+
+.valuutta-selitykset-container {
+    max-height: 300px;
+    /* Määrittää enimmäiskorkeuden */
+    overflow: auto;
+    /* Lisää vierityspalkin jos sisältö ylittää max-height:n */
+}
+
+.valuutta-selitys {
+    margin-bottom: 5px;
+    /* Lisää tilaa selitysten välille */
+}

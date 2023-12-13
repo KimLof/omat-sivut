@@ -19,7 +19,7 @@
     padding: 20px;
     font-size: 2em;
     border: 1px solid #999;
-    border-bottom: none;
+    margin-bottom: 10px; 
 }
 
 .calculator-keys {

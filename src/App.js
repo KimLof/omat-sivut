@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Header from './Header';
-import SubHeader from './SubHeader';
-import GameRoutes from './GameRoutes';
-import './App.css';
+import Header from './components/Header';
+import SubHeader from './components/SubHeader';
+import GameRoutes from './routes/GameRoutes';
+import './styles/App.css';
 
 function App() {
     return (
