@@ -2,33 +2,35 @@
 .App {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     background-image: url('../images/Tausta.jpg');
     /* Aseta sivun taustakuva */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Ensure the image does not repeat */
+    background-attachment: fixed; /* Scroll along with the page */
 }
 
 /* Yläreunan header-tyyli */
 .header {
-    background-color: #f0f0f0;
-    /* Harmaa taustaväri */
+    background-color: #090833;
+    /* New dark blue background color */
+    color: #ffffff;
+    /* White text color */
+    font: Arial, sans-serif;
     padding: 10px 0;
-    /* Pienentää pystysuuntaista paddingia */
     text-align: center;
-    border-bottom: 1px solid #ccc;
-    /* Vaalea raja alapuolella */
+    border-bottom: 1px solid #ffffff;
+    /* Light border for contrast */
     display: flex;
     justify-content: center;
-    /* Keskittää sisällön */
     align-items: center;
-
 }
 
 /* Alapalkki sää- ja muiden tietojen näyttämiseen */
 .subheader {
-    background-color: #f9f9f9;
+    background-color: #090833;
     /* Vaaleampi harmaa taustaväri */
     padding: 0;
     /* Poistaa pystysuuntaisen paddingin */
@@ -40,39 +42,47 @@
     align-items: center;
     height: 50px;
     /* Asettaa korkeuden */
+    color: #ffffff;
 
 }
 
 /* Dropdown-valikon tyyli */
 .dropdown {
-    height: 100%; /* Asettaa korkeuden koko subheaderin korkeudeksi */
-    /* width: 100%; Poista tämä sääntö, jos et halua dropdownin olevan täysleveä */
+    color: #ffffff;
+    height: 100%;
+    /* Asettaa korkeuden koko subheaderin korkeudeksi */
     margin: 0;
     border: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-color: transparent;
-    padding: 0 10px; /* Vähentää paddingia */
+    padding: 0 10px;
+    /* Vähentää paddingia */
     box-sizing: border-box;
-  }
+}
 
 /* Dropdown-valikon nuoli */
 .subheader select {
-    background: url('../images/dropdownarrot.jpg') no-repeat right; /* Asettaa alasvetovalikon nuolen */
-    background-size: 25px 25px; /* Asettaa kuvakkeen koon */
-    padding-right: 30px; /* Asettaa oikean paddingin, jotta teksti ei mene kuvakkeen päälle */
-  }
+    background: url('../images/dropdownarrot.jpg') no-repeat right;
+    /* Asettaa alasvetovalikon nuolen */
+    background-size: 25px 25px;
+    /* Asettaa kuvakkeen koon */
+    padding-right: 30px;
+    /* Asettaa oikean paddingin, jotta teksti ei mene kuvakkeen päälle */
+    background-color: #090833;
+}
 
 /* Asettaa subheaderin sisällön keskelle ja dropdown-valikon oikeaan reunaan */
 .subheader {
     display: flex;
     justify-content: space-between;
     /* Asettaa sisällön ja dropdown-valikon eri päihin */
-    align-items: stretch; /* Asettaa lasten korkeuden täyttämään vanhemman korkeuden */
+    align-items: stretch;
+    /* Asettaa lasten korkeuden täyttämään vanhemman korkeuden */
 
     /* Keskittää elementit pystysuunnassa */
-    
+
 }
 
 /* Lisätään laatikolle pyöreät kulmat ja varjostus */
