@@ -1,73 +1,116 @@
-body {
-  background-color: #f5f5f5; /* Pehmeä harmaa tausta */
-  font-family: 'Arial', sans-serif; /* Muuta tarvittaessa haluamaksesi fontiksi */
-  color: #333; /* Tummanharmaa teksti */
-  margin: 0; /* Poistaa selaimen oletusmarginaalit */
-  padding: 0; /* Poistaa selaimen oletuspaddingin */
-  box-sizing: border-box; /* Varmistaa, että kaikki elementit käyttävät border-box-mallia */
+/* Sivun perusasettelu */
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('Tausta.jpg');
+    /* Aseta sivun taustakuva */
+    background-size: cover;
+    background-position: center;
 }
 
-.app {
-  display: flex;
+/* Yläreunan header-tyyli */
+.header {
+    background-color: #f0f0f0;
+    /* Harmaa taustaväri */
+    padding: 10px 0;
+    /* Pienentää pystysuuntaista paddingia */
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    /* Vaalea raja alapuolella */
+    display: flex;
+    justify-content: center;
+    /* Keskittää sisällön */
+    align-items: center;
+
 }
 
-.left-side, .right-side {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Keskittää sisällön vaakasuunnassa */
+/* Alapalkki sää- ja muiden tietojen näyttämiseen */
+.subheader {
+    background-color: #f9f9f9;
+    /* Vaaleampi harmaa taustaväri */
+    padding: 0;
+    /* Poistaa pystysuuntaisen paddingin */
+    border-bottom: 1px solid #ccc;
+    /* Vaalea raja alapuolella */
+    display: flex;
+    justify-content: space-between;
+    /* Täyttää tilan ja työntää navin oikealle */
+    align-items: center;
+    height: 50px;
+    /* Asettaa korkeuden */
+
 }
 
-/* Uusi tyyli pelilaudalle ja muille sovelluksille */
-.game-container {
-  position: relative; /* Asettaa pelilaudan sisällön suhteen */
-  border: 2px solid #e6e6e6; /* A light grey to blend with the background */
-  border-radius: 10px; /* Rounded corners for a softer look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  background-color: white; /* Ensuring the background is white */
-  padding: 20px; /* Giving some space inside the container */
-  width: 100%; /* Asettaa laatikon leveyden */
-  max-width: 400px; /* tai toinen sopiva leveys */
-  min-height: 590px; /* Asettaa minimikorkeuden, jotta laatikon korkeus ei vaihtele */
-  margin: 20px; /* Lisää tilaa ympärille */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Keskittää sisällön pystysuunnassa */
-  overflow: auto; /* Lisää vierityspalkin tarvittaessa */
+/* Dropdown-valikon tyyli */
+.dropdown {
+    height: 100%; /* Asettaa korkeuden koko subheaderin korkeudeksi */
+    /* width: 100%; Poista tämä sääntö, jos et halua dropdownin olevan täysleveä */
+    margin: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    padding: 0 10px; /* Vähentää paddingia */
+    box-sizing: border-box;
+  }
+
+/* Dropdown-valikon nuoli */
+.subheader select {
+    background: url('dropdownarrot.jpg') no-repeat right; /* Asettaa alasvetovalikon nuolen */
+    background-size: 25px 25px; /* Asettaa kuvakkeen koon */
+    padding-right: 30px; /* Asettaa oikean paddingin, jotta teksti ei mene kuvakkeen päälle */
+  }
+
+/* Asettaa subheaderin sisällön keskelle ja dropdown-valikon oikeaan reunaan */
+.subheader {
+    display: flex;
+    justify-content: space-between;
+    /* Asettaa sisällön ja dropdown-valikon eri päihin */
+    align-items: stretch; /* Asettaa lasten korkeuden täyttämään vanhemman korkeuden */
+
+    /* Keskittää elementit pystysuunnassa */
+    
 }
 
-.text-box {
-  text-align: center; /* Keskittää tekstin */
-  padding: 20px; /* Lisää sisäistä tilaa */
-  background: #ffffff; /* Valkoinen tausta */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Hienovarainen varjostus */
-  border-radius: 8px; /* Pyöristetyt kulmat */
-  margin-bottom: 20px; /* Tilaa tekstilaatikon ja pelilaudan välille */
-  width: 100%;
-  max-width: 400px;
+/* Lisätään laatikolle pyöreät kulmat ja varjostus */
+.content-box {
+    border-radius: 15px;
+    /* Pyöristetyt kulmat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Varjostus */
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Hieman läpinäkyvä valkoinen tausta */
+    margin: 20px;
+    padding: 20px;
+    width: auto;
+    /* Määrittää laatikon leveyden automaattisesti sisällön mukaan */
+    max-width: 80%;
+    /* Maksimileveys, jotta se ei veny liian suureksi */
+    text-align: center;
+    /* Keskittää tekstin */
 }
 
-.menu {
-  width: 100%; /* Asettaa valikon leveyden */
-  max-width: 400px; /* tai toinen sopiva leveys */
+/* Pääsisällön tyylit */
+.main-content {
+    display: flex;
+    justify-content: center;
+    /* Keskittää sisällön vaakasuunnassa */
+    align-items: center;
+    /* Keskittää sisällön pystysuunnassa */
+    padding: 20px;
+    flex-grow: 1;
 }
 
-.menu ul {
-  list-style-type: none; /* Poistaa listan merkit */
-  padding: 0; /* Poistaa paddingin */
+/* Tämä varmistaa, että sisältö näkyy keskitetysti ja että laatikko on keskellä */
+.main-content>* {
+    width: 100%;
+    /* Asettaa sisällön leveyden */
+    max-width: 1200px;
+    /* Asettaa sisällön maksimileveyden */
 }
 
-.menu li {
-  margin: 10px 0;
-  background: #ffffff; /* Valkoinen tausta */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Hienovarainen varjostus */
-  border-radius: 8px; /* Pyöristetyt kulmat */
-}
 
-.menu li a {
-  text-decoration: none;
-  color: #333;
-  padding: 10px;
-  display: block; /* Tehdään koko alue klikattavaksi */
-  transition: background-color 0.2s; /* Animaatio hover-efektille */
-}
+/* Tässä voisi olla muita tyylejä tarpeen mukaan */

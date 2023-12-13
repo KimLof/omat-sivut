@@ -1,0 +1,46 @@
+.snake-game {
+    border: 1px solid black;
+    margin: auto;
+}
+
+.button {
+    background-color: #007bff;
+    /* Sininen */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    /* Väli nappejen välillä */
+    transition: background-color 0.3s ease;
+}
+
+.speed-buttons {
+    display: flex;
+    justify-content: center; /* Keskittää lapset vaakasuunnassa */
+    flex-wrap: wrap; /* Mahdollistaa lasten siirtymisen uudelle riville tarvittaessa */
+    gap: 10px; /* Lisää väliä nappien välille */
+  }
+  
+  /* Jatka muilla tyyleilläsi tästä eteenpäin... */
+  
+
+/* Hiiren ollessa nappien päällä */
+.button:hover {
+    background-color: #0056b3;
+    /* Tummennettu sininen */
+}
+
+/* Aktiivinen/valittu nopeusnappi */
+.button-active {
+    background-color: #ffc107;
+    /* Keltainen */
+}
+
+/* Napin painettu/aktiivinen tila */
+.button:active {
+    background-color: #ffc107;
+    /* Keltainen */
+}
