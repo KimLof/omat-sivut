@@ -1,13 +1,13 @@
 .calculator {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    width: 100%;
+    font-family: 'Helvetica', 'Arial', sans-serif; 
+    width: 100%; 
     max-width: 400px;
     margin: 20px auto;
 }
 
 .otsikko {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
 
 .calculator-display {
@@ -29,8 +29,8 @@
 }
 
 button {
-    background-color: #e0e0e0; /* Vaaleampi harmaa tausta numeroille */
-    color: #333; /* Tummempi fontin väri */
+    background-color: #e0e0e0;
+    color: #333;
     font-size: 1.5em;
     padding: 20px;
     cursor: pointer;
@@ -55,27 +55,21 @@ button.operator,
 
 .equal-sign {
     grid-column: span 2;
-    /* Makes the equals button take up two columns */
 }
 
 .all-clear {
     grid-row: span 1;
-    /* Makes the AC button take up one row */
     grid-column: span 2;
-    /* Makes the AC button take up two columns */
 }
 
-/* Style adjustments for the zero button to fill the space */
 button.zero {
     grid-column: span 2;
-    /* Makes the zero button take up two columns */
 }
 
 button:active {
     background-color: #ccc;
 }
 
-/* Adding some hover effects for the buttons */
 button:hover:not(.operator),
 button:focus:not(.operator) {
     background-color: #ddd;
@@ -96,6 +90,5 @@ button.equal-sign:focus {
 
 .placeholder {
     background-color: #ddd;
-    /* Placeholder button if needed */
     border: none;
 }

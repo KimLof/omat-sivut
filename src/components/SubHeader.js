@@ -4,7 +4,7 @@ import DropdownMenu from './DropdownMenu';
 function SubHeader({ onSelectionChange }) {
   return (
     <div className="subheader">
-      <p>Jotain tekstiä tähän, esim. säätila</p>
+      <p></p>
       <DropdownMenu onSelectionChange={onSelectionChange} />
     </div>
   );

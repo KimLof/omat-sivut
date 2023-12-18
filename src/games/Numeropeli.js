@@ -115,7 +115,6 @@ function FifteenGame() {
             <h1 className='Otsikko'>15-peli</h1>
             <div className="game-board">
                 {tiles.map((tile, index) => {
-                    // Tarkista onko tiili punainen sen arvon perusteella
                     const isRed = [0, 1, 2, 3, 8, 9, 10, 11, ].includes(tile);
                     return (
                         <div

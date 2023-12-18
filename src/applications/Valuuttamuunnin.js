@@ -77,7 +77,6 @@ const CurrencyConverter = () => {
             <div className="content">
                 <div className="muunnin">
                     <h2>Valuuttamuunnin</h2>
-                    {/* Input-kentät ja muunnin-nappi */}
                     <div className="input-group">
                         <input
                             type="number"

@@ -23,7 +23,7 @@ function SnakeGame() {
     };
 
     const handleKeyDown = useCallback((e) => {
-        if (!hasMoved) return; // Ei salli suunnanmuutosta, jos edellinen ei ole toteutunut
+        if (!hasMoved) return;
     
         const key = e.key;
         const newDirection = { x: 0, y: 0 };
@@ -63,7 +63,7 @@ function SnakeGame() {
     
         if (newDirection.x !== 0 || newDirection.y !== 0) {
             setDirection(newDirection);
-            setHasMoved(false); // Asetetaan falseksi, kunnes käärme liikkuu
+            setHasMoved(false);
         }
     }, [direction, scale, hasMoved, setDirection, setHasMoved]);
 
@@ -113,9 +113,8 @@ function SnakeGame() {
             setSnake(newSnake);
         }, speed);
 
-        // Lopettaa pelin ja puhdistaa kaikki
         function endGame() {
-            window.alert('Game Over'); // Voit vaihtaa tämän paremmaksi pelin lopetuslogiikaksi
+            window.alert('Game Over');
             clearInterval(interval);
             window.removeEventListener('keydown', handleKeyDown);
             setGameStarted(false);

@@ -1,57 +1,49 @@
 .snake-game {
-    border: 1px solid black;
-    margin-bottom: 10px; /* Lisää väliä canvasin ja Aloita-napin välille */
+    border: 1px solid black; /* Asettaa reunuksen */
+    margin-bottom: 10px; /* Asettaa elementin alareunan etäisyyden */
 
 }
 
 .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Keskittää lapset pystysuunnassa */
-    justify-content: center; /* Keskittää lapset vaakasuunnassa */
-    margin-top: 20px; /* Lisää tilaa yläreunaan, voit säätää tätä tarpeen mukaan */
+    display: flex; /* Asettaa elementit riviin */
+    flex-direction: column; /* Asettaa elementit pystyriviin */
+    align-items: center; /* Asettaa elementit keskelle vaakatasossa */
+    justify-content: center; /* Asettaa elementit keskelle pystysuunnassa */
+    margin-top: 20px; /* Asettaa elementin yläreunan etäisyyden */
 }
 
 .button {
-    width: 200px;
-    background-color: #007bff;
-    /* Sininen */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-    /* Väli nappejen välillä */
-    transition: background-color 0.3s ease;
+    width: 200px; /* Asettaa elementin leveyden */
+    background-color: #007bff; /* Asettaa taustavärin */
+    color: white; /* Asettaa tekstin värin */
+    padding: 10px 20px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    border: none; /* Poistaa reunuksen */
+    border-radius: 5px; /* Asettaa reunuksen kulmien pyöristyksen */
+    cursor: pointer; /* Asettaa kursorin muodon */
+    font-size: 16px; /*Asettaa fontin koon */
+    margin: 5px; /* Asettaa elementin yläreunan etäisyyden */
+    transition: background-color 0.3s ease; /* Asettaa siirtymän keston ja tyylin */
 }
 
 .speed-buttons {
-    display: flex;
+    display: flex; 
     justify-content: center;
-    /* Keskittää lapset vaakasuunnassa */
     flex-wrap: wrap;
-    /* Mahdollistaa lasten siirtymisen uudelle riville tarvittaessa */
-    gap: 1px;
-    /* Lisää väliä nappien välille */
+    gap: 1px; 
 }
 
 
 /* Hiiren ollessa nappien päällä */
 .button:hover {
-    background-color: #0056b3;
-    /* Tummennettu sininen */
+    background-color: #0056b3; 
 }
 
 /* Aktiivinen/valittu nopeusnappi */
 .button-active {
     background-color: #ffc107;
-    /* Keltainen */
 }
 
 /* Napin painettu/aktiivinen tila */
 .button:active {
     background-color: #ffc107;
-    /* Keltainen */
 }

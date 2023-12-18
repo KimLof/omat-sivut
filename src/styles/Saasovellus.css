@@ -1,41 +1,40 @@
 .weather-app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+    display: flex; /* Asettaa elementit riviin */
+    flex-direction: column; /* Asettaa elementit pystyriviin */
+    align-items: center; /* Asettaa elementit keskelle vaakatasossa */
+    justify-content: center; /* Asettaa elementit keskelle pystysuunnassa */
 }
 
 .weather-app form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex; /* Asettaa elementit riviin */
+    flex-direction: column; /* Asettaa elementit pystyriviin */
+    gap: 10px; /* Luo tilaa elementtien välille */
 }
 
 .weather-app input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    border: 1px solid #ddd; /* Asettaa reunuksen */
+    border-radius: 4px; /* Asettaa reunuksen kulmien pyöristyksen */
 }
 
 .weather-app button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 10px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    background-color: #007bff; /* Asettaa taustavärin */
+    color: white; /* Asettaa tekstin värin */
+    border: none; /* Poistaa reunuksen */
+    border-radius: 4px; /* Asettaa reunuksen kulmien pyöristyksen */
+    cursor: pointer; /* Asettaa kursorin muodon */
 }
 
 .weather-app button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Asettaa taustavärin */
 }
 
 .error-message {
-    color: red;
-    margin-top: 10px;
+    color: red; /* Asettaa tekstin värin */
+    margin-top: 10px; /* Asettaa elementin yläreunan etäisyyden */
 }
 
 .weather-info {
-    margin-top: 20px;
+    margin-top: 20px; /* Asettaa elementin yläreunan etäisyyden */
 }

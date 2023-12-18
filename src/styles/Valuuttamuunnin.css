@@ -1,87 +1,87 @@
-/* Valuuttamuunnin.css */
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    padding: 20px;
-    width: 80%;
-    max-width: 900px;
-    /* tai haluamasi maksimileveys */
-    margin: auto;
+    display: flex; /* Asettaa elementit riviin */
+    flex-direction: column; /* Asettaa elementit pystyriviin */
+    align-items: center; /* Asettaa elementit keskelle vaakatasossa */
+    justify-content: center; /* Asettaa elementit keskelle pystysuunnassa */
+    margin-top: 50px; /* Asettaa elementin yläreunan etäisyyden */
+    padding: 20px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    width: 80%; /* Asettaa elementin leveyden */
+    max-width: 900px; /* Asettaa elementin maksimileveyden */
+    margin: auto; /* Asettaa elementin keskelle vaakatasossa */
 }
 
 .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* Asettaa elementit ylös flex-kontainerissa */
-    width: 100%;
-    max-width: 1200px;
-    /* Säädä tarvittaessa */
+    display: flex; /* Asettaa elementit riviin */
+    justify-content: space-between; /* Asettaa elementit tasaisesti vaakatasossa */
+    align-items: flex-start; /* Asettaa elementit ylös vaakatasossa */
+    width: 100%; /* Asettaa elementin leveyden */
+    max-width: 1200px; /* Asettaa elementin maksimileveyden */
 }
 
 .converter-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    /* Luo tilaa elementtien välille */
+    display: flex; /* Asettaa elementit riviin */
+    justify-content: space-between; /* Asettaa elementit tasaisesti vaakatasossa */
+    gap: 20px; /* Luo tilaa elementtien välille */
 }
 
 .muunnin,
 .selitykset {
-    width: 48%;
-    /* Säädä leveyttä tarpeen mukaan */
+    width: 48%; /* Asettaa elementin leveyden */
 }
 
 .input-group .input,
 .input-group .select,
 .button {
-    width: 50%; /* Tämä asettaa kaikki elementit samanlevyisiksi */
-    padding: 10px;
-    margin-bottom: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 50%; /* Asettaa elementin leveyden */
+    padding: 10px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    margin-bottom: 5px; /* Asettaa elementin alareunan etäisyyden */
+    border: 1px solid #ccc; /* Asettaa reunuksen */
+    border-radius: 4px; /* Asettaa reunuksen kulmien pyöristyksen */
 }
 
 .button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
+    background-color: #007bff; /* Asettaa taustavärin */
+    color: white; /* Asettaa tekstin värin */
+    cursor: pointer; /* Asettaa kursorin muodon */
+    
 }
 
 .output {
-    text-align: center;
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    text-align: center; /* Asettaa tekstin keskelle vaakatasossa */
+    padding: 10px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    margin-top: 10px; /* Asettaa elementin yläreunan etäisyyden */
+    width: 100%; /* Asettaa elementin leveyden */
+    border: 1px solid #ccc; /* Asettaa reunuksen */
+    border-radius: 4px; /* Asettaa reunuksen kulmien pyöristyksen */
 }
 
 .output-amount {
-    text-align: center;
-    margin-top: 5px;
+    text-align: center; /* Asettaa tekstin keskelle vaakatasossa */
+    margin-top: 5px; /* Asettaa elementin yläreunan etäisyyden */
 }
 
 .valuutta-selitykset {
-    margin-left: 20px;
-    /* Lisää tilaa oikealle */
-    max-height: 400px;
-    /* Säädä korkeutta tarpeen mukaan */
+    margin-left: 20px; /* Asettaa elementin vasemman reunan etäisyyden */
+    max-height: 400px; /* Asettaa elementin maksimikorkeuden */
     overflow: auto;
-    /* Pitää listan vieritettävänä */
 }
 
 .valuutta-selitykset-container {
-    max-height: 300px;
-    /* Määrittää enimmäiskorkeuden */
-    overflow: auto;
-    /* Lisää vierityspalkin jos sisältö ylittää max-height:n */
+    max-height: 300px; /* Asettaa elementin maksimikorkeuden */
+    overflow: auto; /* Asettaa vierityspalkin */
 }
 
 .valuutta-selitys {
-    margin-bottom: 5px;
-    /* Lisää tilaa selitysten välille */
+    margin-bottom: 5px; /* Asettaa elementin alareunan etäisyyden */
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Asettaa elementit pystyriviin */
+    }
+
+    .muunnin,
+    .selitykset {
+        width: 100%; /* Asettaa elementin leveyden */
+    }
 }

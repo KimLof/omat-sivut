@@ -1,126 +1,93 @@
-/* Sivun perusasettelu */
 .App {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background-image: url('../images/Tausta.jpg');
-    /* Aseta sivun taustakuva */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; /* Ensure the image does not repeat */
-    background-attachment: fixed; /* Scroll along with the page */
+    display: flex; /* Asettaa elementit riviin */
+    flex-direction: column; /* Asettaa elementit pystyriviin */
+    min-height: 100vh; /* Asettaa elementin minimikorkeuden */
+    font-family: Arial, sans-serif; /* Asettaa fontin */
+    background-image: url('../images/Tausta.jpg'); /* Asettaa taustakuvan */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
 }
 
 /* Yläreunan header-tyyli */
 .header {
-    background-color: #090833;
-    /* New dark blue background color */
-    color: #ffffff;
-    /* White text color */
-    font: Arial, sans-serif;
-    padding: 10px 0;
-    text-align: center;
-    border-bottom: 1px solid #ffffff;
-    /* Light border for contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #090833; /* Asettaa taustavärin */
+    color: #ffffff; /* Asettaa tekstin värin */
+    font: Arial, sans-serif; /* Asettaa fontin */
+    padding: 10px 0; /* Asettaa sisällön etäisyyden elementin reunoista */
+    text-align: center; /* Asettaa tekstin keskelle vaakatasossa */
+    border-bottom: 1px solid #ffffff; /* Asettaa reunuksen */
+    display: flex; /* Asettaa elementit riviin */
+    justify-content: center; /* Asettaa elementit keskelle vaakatasossa */
+    align-items: center; /* Asettaa elementit keskelle pystysuunnassa */
 }
 
-/* Alapalkki sää- ja muiden tietojen näyttämiseen */
+/* Alapalkki muiden tietojen näyttämiseen */
 .subheader {
-    background-color: #090833;
-    /* Vaaleampi harmaa taustaväri */
-    padding: 0;
-    /* Poistaa pystysuuntaisen paddingin */
-    border-bottom: 1px solid #ccc;
-    /* Vaalea raja alapuolella */
-    display: flex;
-    justify-content: space-between;
-    /* Täyttää tilan ja työntää navin oikealle */
-    align-items: center;
-    height: 50px;
-    /* Asettaa korkeuden */
-    color: #ffffff;
+    background-color: #090833; /* Asettaa taustavärin */
+    padding: 0; /* Asettaa sisällön etäisyyden elementin reunoista */
+    border-bottom: 1px solid #ccc; /* Asettaa reunuksen */
+    display: flex; /* Asettaa elementit riviin */
+    justify-content: space-between; /* Asettaa elementit tasaisesti vaakatasossa */
+    align-items: center; /* Asettaa elementit keskelle pystysuunnassa */
+    height: 50px; /* Asettaa elementin korkeuden */
+    color: #ffffff; /* Asettaa tekstin värin */
 
 }
 
 /* Dropdown-valikon tyyli */
 .dropdown {
-    color: #ffffff;
-    height: 100%;
-    /* Asettaa korkeuden koko subheaderin korkeudeksi */
-    margin: 0;
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    padding: 0 10px;
-    /* Vähentää paddingia */
-    box-sizing: border-box;
+    color: #ffffff; /* Asettaa tekstin värin */
+    height: 100%; /* Asettaa elementin korkeuden */
+    margin: 0; /* Asettaa sisällön etäisyyden elementin reunoista */
+    border: none; /* Poistaa reunuksen */
+    -webkit-appearance: none; /* Poistaa oletusarvoisen ulkoasun */
+    -moz-appearance: none; /* Poistaa oletusarvoisen ulkoasun */
+    appearance: none; /* Poistaa oletusarvoisen ulkoasun */
+    background-color: transparent;  /* Asettaa taustavärin */
+    padding: 0 10px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    box-sizing: border-box; 
 }
 
 /* Dropdown-valikon nuoli */
 .subheader select {
-    background: url('../images/dropdownarrot.jpg') no-repeat right;
-    /* Asettaa alasvetovalikon nuolen */
-    background-size: 25px 25px;
-    /* Asettaa kuvakkeen koon */
-    padding-right: 30px;
-    /* Asettaa oikean paddingin, jotta teksti ei mene kuvakkeen päälle */
-    background-color: #090833;
+    background: url('../images/arrow_colored_background.png') no-repeat right; /* Asettaa taustakuvan */
+    background-size: 25px 25px;  
+    padding-right: 30px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    background-color: #090833; /* Asettaa taustavärin */
 }
 
 /* Asettaa subheaderin sisällön keskelle ja dropdown-valikon oikeaan reunaan */
 .subheader {
-    display: flex;
-    justify-content: space-between;
-    /* Asettaa sisällön ja dropdown-valikon eri päihin */
-    align-items: stretch;
-    /* Asettaa lasten korkeuden täyttämään vanhemman korkeuden */
-
-    /* Keskittää elementit pystysuunnassa */
-
+    display: flex; /* Asettaa elementit riviin */
+    justify-content: space-between; /* Asettaa elementit tasaisesti vaakatasossa */
+    align-items: stretch; /* Asettaa elementit venymään pystysuunnassa */
 }
 
-/* Lisätään laatikolle pyöreät kulmat ja varjostus */
+/* Lisää laatikolle pyöreät kulmat ja varjostus */
 .content-box {
-    border-radius: 15px;
-    /* Pyöristetyt kulmat */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Varjostus */
-    background-color: rgba(255, 255, 255, 0.95);
-    /* Hieman läpinäkyvä valkoinen tausta */
-    margin: 20px;
-    padding: 20px;
-    width: auto;
-    /* Määrittää laatikon leveyden automaattisesti sisällön mukaan */
-    max-width: 80%;
-    /* Maksimileveys, jotta se ei veny liian suureksi */
-    text-align: center;
-    /* Keskittää tekstin */
+    border-radius: 15px; /* Asettaa reunuksen kulmien pyöristyksen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Asettaa varjostuksen */
+    background-color: rgba(255, 255, 255, 0.95); /* Asettaa taustavärin */
+    margin: 20px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    padding: 20px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    width: auto; /* Asettaa elementin leveyden */
+    max-width: 80%; /* Asettaa elementin maksimileveyden */
+    text-align: center; /* Asettaa tekstin keskelle vaakatasossa */
 }
 
 /* Pääsisällön tyylit */
 .main-content {
-    display: flex;
-    justify-content: center;
-    /* Keskittää sisällön vaakasuunnassa */
-    align-items: center;
-    /* Keskittää sisällön pystysuunnassa */
-    padding: 20px;
-    flex-grow: 1;
+    display: flex; /* Asettaa elementit riviin */
+    justify-content: center; /* Asettaa elementit keskelle vaakatasossa */
+    align-items: center; /* Asettaa elementit keskelle pystysuunnassa */
+    padding: 20px; /* Asettaa sisällön etäisyyden elementin reunoista */
+    flex-grow: 1; /* Asettaa elementin kasvamaan */
 }
 
 /* Tämä varmistaa, että sisältö näkyy keskitetysti ja että laatikko on keskellä */
 .main-content>* {
-    width: 100%;
-    /* Asettaa sisällön leveyden */
-    max-width: 1200px;
-    /* Asettaa sisällön maksimileveyden */
+    width: 100%; /* Asettaa elementin leveyden */
+    max-width: 1200px; /* Asettaa elementin maksimileveyden */
 }
-
-
-/* Tässä voisi olla muita tyylejä tarpeen mukaan */

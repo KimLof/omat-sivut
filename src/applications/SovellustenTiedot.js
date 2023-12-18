@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
 function SovellusTiedot() {
     return (
@@ -22,7 +22,7 @@ function SovellusTiedot() {
                     mikä nopeuttaa laskutoimitusten suorittamista.</p>
 
                 <h2>Sääsovellus</h2>
-                <p>Sääsovelluksemme tuo ajankohtaiset säätiedot suoraan OpenWeatherMap-palvelusta.
+                <p>Sääsovellukseni tuo ajankohtaiset säätiedot suoraan OpenWeatherMap-palvelusta.
                     Saat nopeasti tietää paikalliset sääolosuhteet olitpa sitten kotona tai matkoilla.</p>
 
                 <h2>Valuuttamuunnin</h2>

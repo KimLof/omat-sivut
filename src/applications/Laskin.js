@@ -80,10 +80,8 @@ const Calculator = () => {
             }
         };
 
-        // Lisää event listener näppäimistön painalluksille
         document.addEventListener('keydown', handleKeyDown);
 
-        // Muista poistaa event listener, kun komponentti poistetaan DOM:sta
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
