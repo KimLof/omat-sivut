@@ -4,10 +4,10 @@
     min-height: 100vh; /* Asettaa elementin minimikorkeuden */
     font-family: Arial, sans-serif; /* Asettaa fontin */
     background-image: url('../images/Tausta.jpg'); /* Asettaa taustakuvan */
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Asettaa taustakuvan kiinni näyttöön */
 }
 
 /* Yläreunan header-tyyli */
@@ -47,13 +47,14 @@
     appearance: none; /* Poistaa oletusarvoisen ulkoasun */
     background-color: transparent;  /* Asettaa taustavärin */
     padding: 0 10px; /* Asettaa sisällön etäisyyden elementin reunoista */
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    cursor: pointer; /* Asettaa kursorin muodon */
 }
 
 /* Dropdown-valikon nuoli */
 .subheader select {
     background: url('../images/arrow_colored_background.png') no-repeat right; /* Asettaa taustakuvan */
-    background-size: 25px 25px;  
+    background-size: 25px 25px;
     padding-right: 30px; /* Asettaa sisällön etäisyyden elementin reunoista */
     background-color: #090833; /* Asettaa taustavärin */
 }

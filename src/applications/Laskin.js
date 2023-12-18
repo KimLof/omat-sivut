@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState, useEffect, useCallback  } from 'react';
 import '../styles/Laskin.css';
 
 const Calculator = () => {
@@ -9,16 +9,16 @@ const Calculator = () => {
 
     
 
-    const inputDigit = (digit) => {
+    const inputDigit = useCallback((digit) => {
         if (waitingForOperand) {
             setCurrentValue(String(digit));
             setWaitingForOperand(false);
         } else {
             setCurrentValue(currentValue === '0' ? String(digit) : currentValue + digit);
         }
-    };
+    }, [currentValue, waitingForOperand]);
 
-    const inputDot = () => {
+    const inputDot = useCallback(() => {
         if (waitingForOperand) {
             setCurrentValue('0.');
             setWaitingForOperand(false);
@@ -26,7 +26,7 @@ const Calculator = () => {
             setCurrentValue(currentValue + '.');
             setWaitingForOperand(false);
         }
-    };
+    }, [currentValue, waitingForOperand]);
 
     const clearAll = () => {
         setCurrentValue('0');
