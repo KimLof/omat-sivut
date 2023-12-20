@@ -7,6 +7,7 @@ import Calculator from '../applications/Laskin';
 import SnakeGame from '../games/Matopeli';
 import Tietoa from '../applications/Tietoa';
 import SovellusTiedot from '../applications/SovellustenTiedot';
+import Yhteys from '../applications/Yhteys';
 
 function GameRoutes() {
     return (
@@ -19,6 +20,7 @@ function GameRoutes() {
                 <Route path="/saasovellus" element={<Weather />} />
                 <Route path="/valuuttamuunnin" element={<CurrencyConverter />} />
                 <Route path="/matopeli" element={<SnakeGame />} />
+                <Route path="/yhteys" element={<Yhteys />} />
             </Routes>
         </div>
     );

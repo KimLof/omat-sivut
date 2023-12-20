@@ -41,7 +41,7 @@
     color: #ffffff; /* Asettaa tekstin värin */
     height: 100%; /* Asettaa elementin korkeuden */
     margin: 0; /* Asettaa sisällön etäisyyden elementin reunoista */
-    border: none; /* Poistaa reunuksen */
+    border-left: 1px solid #ccc; /* Asettaa reunuksen vasemalle*/
     -webkit-appearance: none; /* Poistaa oletusarvoisen ulkoasun */
     -moz-appearance: none; /* Poistaa oletusarvoisen ulkoasun */
     appearance: none; /* Poistaa oletusarvoisen ulkoasun */

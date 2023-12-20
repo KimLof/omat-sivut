@@ -24,10 +24,10 @@ function SnakeGame() {
 
     const handleKeyDown = useCallback((e) => {
         if (!hasMoved) return;
-    
+
         const key = e.key;
         const newDirection = { x: 0, y: 0 };
-    
+
         switch (key) {
             case 'ArrowLeft':
             case 'a':
@@ -60,12 +60,54 @@ function SnakeGame() {
             default:
                 return;
         }
-    
+
         if (newDirection.x !== 0 || newDirection.y !== 0) {
             setDirection(newDirection);
             setHasMoved(false);
         }
     }, [direction, scale, hasMoved, setDirection, setHasMoved]);
+
+    const [touchStart, setTouchStart] = useState({ x: null, y: null });
+    const [touchEnd, setTouchEnd] = useState({ x: null, y: null });
+
+    // Laskee swipe-eleen suunnan
+    const handleTouchStart = (e) => {
+        const touch = e.touches[0];
+        setTouchStart({ x: touch.clientX, y: touch.clientY });
+    };
+
+    const handleTouchMove = (e) => {
+        const touch = e.touches[0];
+        setTouchEnd({ x: touch.clientX, y: touch.clientY });
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStart.x || !touchStart.y) {
+            return;
+        }
+
+        const deltaX = touchEnd.x - touchStart.x;
+        const deltaY = touchEnd.y - touchStart.y;
+
+        // Käsittele vain suhteellisen selkeät swipe-liikkeet
+        if (Math.abs(deltaX) > Math.abs(deltaY)) { // vaakasuora liike
+            if (deltaX > 0) {
+                setDirection({ x: scale, y: 0 }); // swipe oikealle
+            } else {
+                setDirection({ x: -scale, y: 0 }); // swipe vasemmalle
+            }
+        } else { // pystysuora liike
+            if (deltaY > 0) {
+                setDirection({ x: 0, y: scale }); // swipe alas
+            } else {
+                setDirection({ x: 0, y: -scale }); // swipe ylös
+            }
+        }
+
+        // Nollaa kosketuspisteet
+        setTouchStart({ x: null, y: null });
+        setTouchEnd({ x: null, y: null });
+    };
 
     useEffect(() => {
         if (!gameStarted) return;
@@ -135,14 +177,17 @@ function SnakeGame() {
                 <button className={`button ${speed === 100 ? 'button-active' : ''}`} onClick={() => setSpeed(100)}>Nopea</button>
             </div >
             <div className="game-container">
-        <canvas
-            ref={canvasRef}
-            width={`${scale * columns}px`}
-            height={`${scale * rows}px`}
-            className="snake-game"
-        />
-        {!gameStarted && <button className="button" onClick={startGame}>Aloita</button>}
-    </div>
+                <canvas
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    ref={canvasRef}
+                    width={`${scale * columns}px`}
+                    height={`${scale * rows}px`}
+                    className="snake-game"
+                />
+                {!gameStarted && <button className="button" onClick={startGame}>Aloita</button>}
+            </div>
         </>
     );
 }

@@ -17,6 +17,7 @@ function DropdownMenu() {
       <option value="/saasovellus">Sääsovellus</option>
       <option value="/valuuttamuunnin">Valuuttamuunnin</option>
       <option value="/matopeli">Käärme-peli</option>
+      <option value="/yhteys">Yhteystiedot</option>
     </select>
   );
 }
