@@ -6,5 +6,5 @@ This website serves as a project showcase and practice area for new skills I've 
 
 *Note: This is my old portfolio.* 
 
-If you're interested in my current portfolio, you can find it on GitHub [here](https://github.com/KimLof/omat-sivut).
+If you're interested in my current portfolio, you can find it on GitHub [here](https://github.com/KimLof/Portfolio).
 
